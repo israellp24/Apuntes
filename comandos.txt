@@ -1,0 +1,119 @@
+comando de GIT
+
+git init /-> inicializar git en cualquier ruta
+
+git config --list  /->ver las configuraciones de nuestro git
+
+git config --global user.name "nombre de usuario"
+
+git config --global user.email "correo"
+
+
+git clone -v --progress //gdl-test/c$/bare.git /-> Clonar el repositorio original al local
+
+git pull   /-> bajar archivos del server o meter nuevos cambios al server (Gdl-test)
+
+git status /->permite ver los archivos que tenemos
+
+git add <Archivo> /->Agregar archivos individuales o git add . , agrega todos los archivos
+
+git rm --cached <file> /-> regresa el archivo hasta antes del add
+
+git commit -m "Comentario" /->comitear archivos
+
+git push /->subir cambios al server si estas en local
+
+git log /-> revisar el log 
+
+git diff master@{1} master <file> /->Revisar diferencias
+
+git show <file> /->revisar los cambios del ultimo archivo
+
+git diff-tree --name-only -r <key del commit, pueden ser los primeros 5 digitos> /->mostrar archivos modificados
+
+git reset --hard /->revertir todo hasta la versión anterior, Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+
+git reset --hard HEAD~1 /->revertir el ultimo commit, Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+
+git log --stat /-> Muestra el log con los archivos modificados 
+
+git checkout (token log) (archivo) /-> regresar el archivo a los cambios de esa versión
+
+git checkout master (archivo) /-> regresa el archivo a la ultima version que se encuentra en el master
+
+Desde el 1 de octubre de 2020 GitHub cambió el nombre de la rama principal: ya no es “master” -como aprenderás en el curso- sino main. 
+git branch -M main /-> mueve todos los cambios existentes en tu rama master a la nueva rama main
+
+git branch (nombre de la nueva rama) /->Crear una rama
+
+git branch /-> Para revisar todas las ramas disponibles.
+
+git checkout (rama) /->para moverse entre las ramas, los cambios que tengas hagas en una no se veran en la otra, por lo que puedes hacer cambios a una rama sin problemas
+
+git merge /-> Ojo: Siempre es recomendable hacer este comando estando en la rama master
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------                 GITHUB          ----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.- Crear un nuevo repositorio en GitHub.
+
+2.- Copiar la url del repositorio
+
+3.- En git local usar el siguiente comando para añadir el repositorio remoto.
+    git remote add origin (URL)
+
+git remote -v /-> Verifica la existencia del origien remoto.
+
+git config -l /-> Permite ver los parametros de configuración
+
+4.- Por primera vez no permitira hacer git push al directorio online, para forzar el push es necesario ejecutar el siguiente comando.
+    git pull origin main --allow-unrelated-histories
+
+git push origin main /-> Para mandar todos nuestros archivos al repositorio Online
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------                 CLAVES         ----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Generar una nueva llave SSH: (Cualquier sistema operativo), de preferencia crearla en el home: cd ~
+
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+
+Se creara una carpeta .ssh, con la llave publica y la llave privada
+
+Comprobar proceso y agregarlo (Windows)
+
+eval $(ssh-agent - s)
+ssh-add ~/.ssh/id_rsa
+
+Posteriormeten hay que proporcionarle a GitHub una copia de nuestra llave pública:
+En la ruta: Personal Settings/SSH and GPGkeys/SSH keys/ hay que copiar el contenido del archivo id_rsa.pub que se genero con el comando ssh-keygen.
+
+git remote set-url origin (ssh-url de git) /-> Configura git para conectar con el repositorio remoto a traves de SSH (en lugar de HTTPS)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+git log --graph --decorate --oneline  /-> Ver el log de manera grafica
+
+alias (nombre del alias)="git log --graph --decorate --oneline" /-> Guarda el comando en la variable que elegimos, al llamar la variable se ejecuta el comando
+
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"  /-> Establece un alias global a log como superlog y se configura para mostrar de forma ordenada y con colores los logs.
+
+git tag -a v0.1 -m "mensaje" (hash commit) /-> Registra un tag v0.1 un mensaje y el hash del commirt donde se va a agregar el tag.
+
+git tag -l /-> Lista los tags existentes
+
+git show-ref --tags /-> Lista los tags existentes con los Commits respectivos
+
+git tag -d v0.1 /-> Elimina un tag v0.1 de Git Repository
+
+git tag -f -a v0.1 -m "mensaje" (hash commit) /-> permite renombrar un tag v0.1 un mensaje y para el hash
+
+git push origin --tags /->Envia los tags de a el Repositorio remoto (Github)
+
+git push origin main --tags /-> Enviar los tags de la rama main a el repositirio remoto (GitHub)
+
+git push origin : refs/tags/(nombre de tag) /-> Elimina un tag (nombre de tag) del repositorio remoto (GitHub)
+
