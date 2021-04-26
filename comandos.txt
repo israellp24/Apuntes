@@ -120,3 +120,63 @@ git push origin main --tags /-> Enviar los tags de la rama main a el repositirio
 
 git push origin : refs/tags/(nombre de tag) /-> Elimina un tag (nombre de tag) del repositorio remoto (GitHub)
 
+gitk /-> Version visual de la historia de git
+
+
+TRAVIS C o jenkins /-> hacer pull automatico, Revisar
+
+git rebase /-> combinar ramas
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+El comando git stash guarda el trabajo actual del Staging en una lista diseñada para ser temporal llamada Stash, para que pueda ser recuperado en el futuro.
+
+git stash /-> Para agregar los cambios al stash se utiliza este comando.
+
+git stash save "mensaje identificador del elemento del stashed" /-> Podemos poner un mensaje en el stash, para asi diferenciarlos en git stash list por si tenemos varios elementos en el stash. 
+
+git stash pop /-> Para recuperar los últimos cambios desde el stash a tu staging area control z para regresar a los cambios anteriores.
+
+git stash pop stash@{<num_stash>} /->  Para aplicar los cambios de un stash específico y eliminarlo del stash
+
+git stash apply stash@{<num_stash>} /->   Para retomar los cambios de una posición específica del Stash 
+
+git stash list /->  Para ver la lista de cambios guardados en Stash y así poder recuperarlos o hacer algo con ellos 
+
+git stash branch <nombre_de_la_rama> /->  Para crear una rama y aplicar el stash mas reciente 
+
+git stash drop /->  Para eliminar los cambios más recientes dentro del stash (el elemento 0)
+
+git stash clear /->  Si en cambio deseas eliminar todos los elementos del stash
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+git clean --dry-run /-> simula la eliminacion archivos no deseados
+
+git clean --f /-> elimina archivos no deseados
+
+git cherry-pick (hash commit) /-> Cargar un commit especifico a una rama **MALA PRACTICA**
+
+git commit --amend /-> fusiona un add al ultimo commit, esto sirve en caso que hayamos echo un commit pero nos falto hacer otro cambio en ese commit, le damos add al archivo que falto y ejecutamos en --amend y listo fusiona el add al ultimo commit
+
+git reflog  /->  si deseas ver cómo has modificado la historia 
+
+git reset --hard (hash commit) /->  Perderá todo lo que se encuentra en staging y en el Working directory y se moverá el head al commit (hash commit)
+
+git reset --soft (hash commit) /->  Te recuperará todos los cambios que tengas diferentes al commit (hash commit), los agregará al staging area y moverá el head al commit (hash commit)
+
+git grep (palabra) -- /-> donde use la palabra (palabra)
+
+git shortlog -sn  /-> muestra cuantos commit han hecho cada miembros del equipo.
+
+git shortlog -sn --all  /-> muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+
+git shortlog -sn --all --no-merge  /-> muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+
+git blame -c ARCHIVO  /-> muestra quien hizo cada cosa linea por linea
+
+git blame ARCHIVO -Llinea_inicial,linea_final -c /-> muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+
+**git branch -r ** /-> se muestran todas las ramas remotas
+
+git branch -a  /-> se muestran todas las ramas tanto locales como remotas
