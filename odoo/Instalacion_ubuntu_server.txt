@@ -1,0 +1,65 @@
+Instalar KDE en ubuntu server:
+sudo apt install kde-full -y
+
+Instalar Mozilla
+sudo apt-get install firefox
+
+Descargar (.deb) e Instalar Chrome en ubuntu server:
+apt install ./<file>.deb
+
+Descargar (.deb) e Instalar VSC en ubuntu server:
+apt install ./<file>.deb
+
+instalar net-tools
+sudo apt install net-tools
+
+-------------------------------------------------------------------------------------------------------------------
+DOCKER ODOO CON CONFIGURACION POR DEFAULT
+-------------------------------------------------------------------------------------------------------------------
+instalar docker 14
+https://hub.docker.com/_/odoo?tab=description
+
+instalar BD odoo:
+docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:13
+
+instalar imagen docker:
+docker pull odoo:14.0
+
+-------------------------------------------------------------------------------------------------------------------
+DOCKER ODOO CON CONFIGURACIONES PROPIAS <RECOMENDADO>
+-------------------------------------------------------------------------------------------------------------------
+
+Se recomienda instalar Jenkis, en caso de instalar primero hacerlo, colonando el repositorio de github y ejecutar el docker-compose, para que se instale todo lo necesario
+    docker-compose up
+Al crearse toda la instacia de jenkins configurar con el github
+
+En caso de no usar jenkins clonar el repositorio de github de odoo-server y ejecutar el docker-compose, para que se instale todo lo necesario
+    docker-compose up
+
+Dar permisos a una carpeta para usar vsc:
+chmod -R 777 <carpeta>/     
+              o
+chmod -R 777 <carpeta>/*
+
+Iniciar servicio con:
+docker-compose up -d <----Para iniciar sin log
+docker-compose up <-----Instalar por primera vez
+docker-compose start
+docker-compose stop
+docker-compose restart
+
+Abrir el localhost:8069 y configurar el entorno, esto creara el archivo odoo.conf en ./etc
+
+voler a permisos a una carpeta para usar vsc:
+chmod -R 777 <carpeta>/*
+
+una vez creado el archivo de configuracion editar y modificar las lineas:
+addons_path = /mnt/extra-addons
+
+data_dir = /etc/odoo
+
+logfile = /etc/odoo/odoo-server.log
+
+EN CASO DE NECESITAR HACER UN RESPALDO O BORRADO DE BD
+entrar a la siguiente liga
+http://localhost:8069/web/database/manager

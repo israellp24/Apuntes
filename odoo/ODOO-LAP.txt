@@ -1,0 +1,13 @@
+nombre del servidor: odoolap
+nombre de usuario: odoo_lap
+Contraseña de usuario: qwerty
+
+
+
+Master Password: mnaf-mtfy-j7dj
+Database Name: odoo_lap
+Email: desarrollo.fleximatic@gmail.com
+Password: qwerty
+
+ruta de instalacion 
+/home/odoo_lap/Documents/odoo_local

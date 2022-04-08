@@ -1,0 +1,13 @@
+Generar una clave:
+ssh-keygen
+
+Agregar su clave SSH al ssh-agent:
+eval "$(ssh-agent -s)"
+
+En la terminal, ingrese este comando con su nombre de archivo ssh. 
+cat ~/.ssh/id_rsa.pub
+
+copia la clave y pegar en github
+
+CONECTAR SSH DESDE CUALQUIER WINDOWS
+ssh soport@<IP O DNS DEL SERVER>

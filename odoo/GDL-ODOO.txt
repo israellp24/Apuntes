@@ -1,0 +1,19 @@
+nombre del servidor: gdlodoo
+nombre de usuario: soport
+Contraseña de usuario: fL3X1M4T1C
+
+Master Password: k38q-vzq7-vxde
+Database Name: odoo_server
+Email: desarrollo.fleximatic@gmail.com
+Password: &04EzP^WnWeV
+
+ruta de instalacion 
+/home/soport/Documents/jenkins-home/....
+
+----------------------------------------------------------------------------------------------------------
+JENKINS
+----------------------------------------------------------------------------------------------------------
+usuario: root
+contraseña: zZT3!#yB&IQN
+nombre completo: Fleximatic
+email: desarrollo.fleximatic@gmail.com

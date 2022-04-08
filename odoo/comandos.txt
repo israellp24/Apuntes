@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------------------------------------------
+DOCKER
+-------------------------------------------------------------------------------------------------------------------
+
+detener docker odoo
+ docker stop odoo
+
+iniciar docker odoo
+ docker start -a odoo
+
+remover imagen
+docker image rm -f <id image>
+
+Borrar todos los contenedores y imagenes no usadas:
+docker system prune -a
+
+Borra un contenedor seleccionado:
+docker rm <ID_or_Name ID_or_Name>
+
+-------------------------------------------------------------------------------------------------------------------
+TERMINAL
+-------------------------------------------------------------------------------------------------------------------
+Ejecutar VSC como admin
+sudo code --user-data-dir="~/.vscode-root"
+
+Forzar eliminacion de un repositorio
+rm -rf <carpeta o archivo>/
+
+Dar permisos a una carpeta para usar vsc:
+chmod -R 777 <carpeta o archivo>/*
+
+Imprimir informacion de nuestras interfaces
+route -n or netstat -rn
+
+tambien funciona
+ip addr show
